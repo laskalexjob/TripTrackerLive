@@ -5,7 +5,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Swashbuckle.AspNetCore.Swagger;
 using TripTracker.BackService.Data;
-using TripTracker.BackService.Models;
 
 namespace TripTracker.BackService
 {
@@ -49,6 +48,8 @@ namespace TripTracker.BackService
             }
 
             app.UseMvc();
+
+            TripContext.SeedData(app.ApplicationServices);
         }
     }
 }
